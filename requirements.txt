@@ -1,4 +1,4 @@
-numpy
-matplotlib
+matplotlib==3.1.3
+numpy==1.18.1
 scipy
-ipywidgets
+ipywidgets==7.5.1
