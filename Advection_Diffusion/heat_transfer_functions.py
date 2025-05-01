@@ -75,9 +75,9 @@ def sparseMatrix(dt,zs,u,qgeo,conductivity=2.1):
 ### Numerical Model ###
 
 from scipy.sparse.linalg import spsolve
-def numericalModel(zs,ts,dt,u=0,BC_upper=[0.],BC_lower=0.,IC=[None]):
+def numericalModel(zs,ts,dt,u=0,BC_upper=[0.],BC_lower=0.,IC=np.array([None])):
     # Initial condition
-    if np.all(IC) == None:
+    if np.all(IC == None):
         T = BC_upper[0]*np.ones_like(zs)
     else:
         T = IC
