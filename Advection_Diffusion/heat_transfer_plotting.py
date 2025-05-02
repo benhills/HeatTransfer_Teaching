@@ -24,7 +24,7 @@ def perturbation_interactive(T0=0.,dT=1.,t=1.,zs=np.linspace(0,1000,100),
     plt.ylim(max(zs),min(zs))
     plt.xlim(-1,10)
     plt.ylabel('Depth (m)');
-    plt.xlabel('Ice Temperature ($^\circ$C)');
+    plt.xlabel(r'Temperature Change ($^{\circ}$C)');
 
     plt.tight_layout()
 
@@ -44,7 +44,7 @@ def harmonic_interactive(zs=np.linspace(0,20,100),ts=np.linspace(0,1,100),T0=0.,
         # Plot
         plt.plot(ts,T,'k',alpha=0.1,label='%.0f'%z)
 
-    plt.ylabel('Ice Temperature ($^\circ$C)');
+    plt.ylabel(r'Temperature Change ($^{\circ}$C)');
     plt.xlabel('Years');
     plt.xlim(0,1/omega)
     plt.title('Time Series at a Specific Depth');
@@ -58,7 +58,7 @@ def harmonic_interactive(zs=np.linspace(0,20,100),ts=np.linspace(0,1,100),T0=0.,
         plt.plot(T,zs,'k',alpha=0.1,label='%.2f'%(t))
 
     plt.ylabel('Depth (m)');
-    plt.xlabel('Ice Temperature ($^\circ$C)');
+    plt.xlabel(r'Temperature Change ($^{\circ}$C)');
     plt.ylim(max(zs),min(zs));
     plt.xlim(-1.1,1.1)
     plt.title('Profile at a Specific Time')
@@ -91,7 +91,7 @@ def numerical_interactive(Ts,zs,ts,maxt,n_profiles):
         T = Ts[1:,idx]
         plt.plot(ts,T,'k',alpha=0.25,label='%.1f'%z)
 
-    plt.ylabel('Temperature ($^\circ$C)');
+    plt.ylabel(r'Temperature Change ($^{\circ}$C)');
     plt.xlabel('Years');
     plt.title('Time Series at a Specific Depth');
 
@@ -106,7 +106,7 @@ def numerical_interactive(Ts,zs,ts,maxt,n_profiles):
         plt.plot(T,zs,'k',alpha=0.25,label='%.2f'%t)
 
     plt.ylabel('Depth (m)');
-    plt.xlabel('Temperature ($^\circ$C)');
+    plt.xlabel(r'Temperature Change ($^{\circ}$C)');
     plt.ylim(max(zs),min(zs));
     plt.title('Profile at a Specific Time')
 
@@ -131,7 +131,7 @@ def Robin_interactive(Tsurface=-50.,qgeo=0.05,adot=1.,H=1000):
     plt.xlim(-60,0)
     plt.ylim(0,4000)
     plt.ylabel('Height Above Bed (m)')
-    plt.xlabel('Temperature ($^\circ$C)')
+    plt.xlabel(r'Ice Temperature ($^{\circ}$C)')
     plt.tight_layout()
 
     return l1
